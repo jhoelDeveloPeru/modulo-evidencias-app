@@ -1,0 +1,8 @@
+{
+  "name": "ModuloEvidenciasApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "5f264a67"
+}
