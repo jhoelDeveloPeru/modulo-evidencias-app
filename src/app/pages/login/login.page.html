@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="contenedor">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="card-title">Acceso al Sistema</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label position="floating" class="float-label">Usuario</ion-label>
+                  <ion-input name="usuario" [(ngModel)]="usuario"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label position="floating" class="float-label" >Clave</ion-label>
+                  <ion-input name="clave" ngDefaultControl  [(ngModel)]="clave" type="password"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button expand="block" color="secondary" (click)="ingresar()">Ingresar</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,65 @@
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating" class="float-label">Orden de Servicio</ion-label>
+          <ion-input name="orden" [(ngModel)]="orden"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="secondary" (click)="buscarOrden()">Buscar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngIf="datosOrden != undefined">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <strong>Tipo</strong> {{datosOrden.tipo}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <strong>Cliente</strong> {{datosOrden.cliente}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid *ngIf="datosOrden != undefined" >
+    <ion-row *ngFor="let tipo of arrTipoEvidencia">
+      <ion-col>
+        <ion-card class="list-card">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="col-text">
+                  <label>{{tipo.nombre}}</label>
+                </ion-col>
+                <ion-col>
+                  <ion-button expand="block" color="success" (click)="capturar(tipo.id)">Capturar</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid *ngIf="datosOrden != undefined"><ion-row><ion-col>
+      <ion-button expand="block" color="secondary" (click)="guardarDatos()">Guardar</ion-button>
+    </ion-col></ion-row></ion-grid>
+    
+  </ion-toolbar>
+</ion-footer>

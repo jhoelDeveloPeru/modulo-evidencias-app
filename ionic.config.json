@@ -1,7 +1,10 @@
 {
   "name": "ModuloEvidenciasApp",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular",
   "id": "5f264a67"
